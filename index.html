@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AirwaveConnect — personal portfolio of a researcher in sustainable engineering, Green AI, and electromagnetic systems. Coming soon." />
+  <title>AirwaveConnect — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-900: #0a1f44;
+      --navy-800: #102a5c;
+      --navy-700: #1a3a7a;
+      --blue-500: #1e6ed6;
+      --blue-300: #6aa8f0;
+      --slate-200: #e6ecf5;
+      --slate-400: #9aa8c2;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 50%, var(--navy-700) 100%);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle radio-wave background pattern */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(106, 168, 240, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(30, 110, 214, 0.10) 0%, transparent 45%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.3px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--blue-500), var(--blue-300));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(30, 110, 214, 0.4);
+    }
+
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+      stroke: white;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--slate-200);
+      backdrop-filter: blur(10px);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 8px #4ade80;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 48px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      max-width: 760px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--blue-300);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+
+    h1 .accent {
+      background: linear-gradient(135deg, var(--blue-300), var(--blue-500));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: clamp(17px, 2vw, 20px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--slate-200);
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--blue-500);
+      color: white;
+      box-shadow: 0 4px 16px rgba(30, 110, 214, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-300);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(30, 110, 214, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-item {
+      text-align: center;
+    }
+
+    .info-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--slate-400);
+      margin-bottom: 8px;
+    }
+
+    .info-value {
+      font-size: 15px;
+      color: var(--slate-200);
+      font-weight: 500;
+    }
+
+    footer {
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--slate-400);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 640px) {
+      header, main, footer {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      header {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M2 12c2-4 6-6 10-6s8 2 10 6" />
+          <path d="M5 12c1.5-2.5 4-4 7-4s5.5 1.5 7 4" />
+          <circle cx="12" cy="12" r="1.5" fill="white" stroke="none" />
+        </svg>
+      </div>
+      <span>AirwaveConnect</span>
+    </div>
+    <div class="status-badge">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>In development</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Coming Soon</div>
+      <h1>Bridging research, <span class="accent">AI, and engineering</span>.</h1>
+      <p class="tagline">
+        A personal portfolio in progress — showcasing work in Green AI, sustainable engineering frameworks, and electromagnetic systems. New site launching soon.
+      </p>
+
+      <div class="cta-row">
+        <a href="mailto:hello@airwaveconnect.com" class="btn btn-primary">
+          Get in touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M5 12h14M13 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="https://github.com/" class="btn btn-secondary" target="_blank" rel="noopener">
+          View work
+        </a>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Focus</div>
+          <div class="info-value">Green AI &amp; RF Systems</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Based in</div>
+          <div class="info-value">The Netherlands</div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Status</div>
+          <div class="info-value">Open to collaboration</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>&copy; <span id="year"></span> AirwaveConnect. All rights reserved.</div>
+    <div>airwaveconnect.com</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
